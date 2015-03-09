@@ -34,6 +34,8 @@ class ConversionsTest < Minitest::Test
     assert_equal(None(), 1.none)
     assert_equal(Success(1), 1.success)
     assert_equal(Failure(1), 1.failure)
+    assert_equal(Failure([1]), 1.fail_array)
+    assert_equal(Failure(a: 1), 1.fail_hash(:a))
     assert_equal(Right(1), 1.right)
     assert_equal(Left(1), 1.left)
   end

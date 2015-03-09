@@ -31,6 +31,14 @@ module Kleisli
         Failure(self)
       end
 
+      def fail_array
+        Failure([self])
+      end
+
+      def fail_hash(k)
+        Failure(k => self)
+      end
+
       def left
         Left(self)
       end
